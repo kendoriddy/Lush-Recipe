@@ -24,6 +24,9 @@ default: &default
 development:
   <<: *default
   database: Lush_Recipe_development
+  username: postgres
+  password: <%= ENV["26699672a"] %>
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +61,8 @@ development:
 test:
   <<: *default
   database: Lush_Recipe_test
+  username: postgres
+  password: <%= ENV["26699672a"] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
