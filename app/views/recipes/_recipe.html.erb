@@ -1,0 +1,11 @@
+<div class="card mb-3 border-success" style="width: 540px;">
+  <%= link_to recipe_path(recipe) do%>
+      <div class="card-header bg-success text-white"><%=recipe.name%></div>
+      <div class="card-body">
+          <p class="card-text"><%=recipe.description%> </p>
+      </div>
+  <% end %>
+  <div class='card-footer d-flex gap-2 justify-content-end'>
+  <%= button_to 'delete', recipe_path(recipe), method: :delete,class:"btn btn-secondary" %>
+  </div>
+</div>

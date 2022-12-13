@@ -1,0 +1,10 @@
+<h2><%= @recipe.name%> </h2>
+
+<div>Preparation time: <%=@recipe.preparation_time%></div>
+<div>Coocking time:<%= @recipe.cooking_time%></div>
+<%= link_to "Steps Goes here",user_recipe_path(@user,@recipe)  %>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Public</label>
+</div>
+
