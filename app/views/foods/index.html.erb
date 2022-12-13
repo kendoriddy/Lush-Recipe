@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 
-<table>
-    <thead>
+<table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
       <tr>
         <th>Food</th>
         <th>Measurement Unit</th>
@@ -39,10 +39,9 @@
 
   <br>
 
-  <%= link_to 'New Food', user_foods_path %>
+  <%= link_to 'New Food', user_foods_path, class:"btn btn-secondary" %>
 <% else %>
 
 <h1>Hello World!</h1>
-This is my first Rails Webpage...
 
 <% end %>
