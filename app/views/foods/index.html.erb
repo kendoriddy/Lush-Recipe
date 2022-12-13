@@ -1,1 +1,47 @@
-<h1>Food is here</h1>
+<% if user_signed_in? %>
+
+<table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Measurement Unit</th>
+        <th>Unit Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @foods.each do |food| %>
+        <% if food.user == current_user %>
+        <tr>
+          <td>
+<%= link_to food.name, food %>
+
+
+          </td>
+          
+          <td><%= food.measurement_unit %></td>
+          <td><%= food.price %></td>
+          <td><%= food.quantity %></td>
+          
+          
+          
+          
+          
+          <td><%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+          
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Food', user_foods_path %>
+<% else %>
+
+<h1>Hello World!</h1>
+This is my first Rails Webpage...
+
+<% end %>
