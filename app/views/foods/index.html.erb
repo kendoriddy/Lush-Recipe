@@ -5,7 +5,7 @@
       <tr>
         <th>Food</th>
         <th>Measurement Unit</th>
-        <th>Price</th>
+        <th>Unit price($)</th>
         <th>Quantity</th>
         <th>Actions</th>
       </tr>
@@ -16,7 +16,7 @@
         <% if food.user == current_user %>
         <tr>
           <td>
-<%= link_to food.name, food %>
+<%= food.name %>
 
 
           </td>
@@ -24,12 +24,12 @@
           <td><%= food.measurement_unit %></td>
           <td><%= food.price %></td>
           <td><%= food.quantity %></td>
-          
-          
-          
-          
-          
-          <td><%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+
+          <%
+=begin%>
+ <td><%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td> 
+<%
+=end%>
           
         </tr>
         <% end %>
@@ -39,7 +39,7 @@
 
   <br>
 
-  <%= link_to 'New Food', user_foods_path, class:"btn btn-secondary" %>
+  <%= link_to 'Add Food', new_food_path, class:"btn btn-secondary" %>
 <% else %>
 
 <h1>Hello World!</h1>

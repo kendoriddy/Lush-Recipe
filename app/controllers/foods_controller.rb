@@ -4,6 +4,8 @@ class FoodsController < ApplicationController
     end
 
     def show
+        @food = Food.find(params[:id])
+        @user = User.find(params[:user_id])
     end
 
     def new
@@ -11,9 +13,9 @@ class FoodsController < ApplicationController
     end
 
     def create
-        food = current_user.foods.new(food_params)
+        @food = current_user.foods.new(food_params)
 
-        if food.save
+        if @food.save
             redirect_to foods_path, notice: 'New Food successfully added.'
         else
             flash[:alert] = 'Food adding Failed. Please try again.'
