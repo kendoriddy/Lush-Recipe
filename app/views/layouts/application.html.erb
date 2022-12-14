@@ -6,8 +6,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%
-=begin%>
  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> 
 <%
 =end%>
@@ -24,6 +22,9 @@
   </head>
 
   <body>
+  <%= render partial: "shared/navbar" %>
+  <div class="container">
     <%= yield %>
+    </div>
   </body>
 </html>
