@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :recipes
   
 
-
   # Defines the root path route ("/")
 
 end
