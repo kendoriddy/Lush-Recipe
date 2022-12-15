@@ -36,10 +36,10 @@ class RecipesController < ApplicationController
     @user = current_user
   end
 
-  def set_recipe
-    @recipe = set_user.recipes.find(params[:id])
-  end
-
+  def set_recipe 
+    @recipe = Recipe.find(params[:id])
+  end 
+    
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description)
