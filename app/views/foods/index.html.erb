@@ -25,12 +25,12 @@
           <td><%= food.price %></td>
           <td><%= food.quantity %></td>
           <td>
-							<span>
+							<span class="col-xs-6 text-left">
 								<i><%= link_to "edit", edit_food_path(food) %></i>
 						    </span>
 
-							<span>
-								<i><%= button_to "delete_outline", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, id: "delete_button" %></i>
+							<span class="col-xs-6 text-right">
+								<i><%= link_to "Delete", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, id: "delete_button" %></i>
 						    </span>
 						</td>
 
