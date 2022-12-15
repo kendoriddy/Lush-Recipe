@@ -5,7 +5,9 @@
           <p class="card-text"><%=recipe.description%> </p>
       </div>
   <% end %>
+  <% if can? :manag, recipe %>
   <div class='card-footer d-flex gap-2 justify-content-end'>
   <%= button_to 'delete', recipe_path(recipe), method: :delete,class:"btn btn-secondary" %>
   </div>
+  <%end%>
 </div>

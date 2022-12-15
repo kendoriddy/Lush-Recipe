@@ -1,0 +1,17 @@
+<div>
+<h2><%= recipe.name%> </h2>
+<span>by recipe.user.name </span>
+
+<div>Preparation time: <%=@recipe.preparation_time%></div>
+<div>Coocking time:<%= recipe.cooking_time%></div>
+<%= link_to "Steps Goes here",recipe_path(recipe)  %>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Public</label>
+  # <link_to "Generate shopping list", %>
+
+  <% if can? :manag ,recipe %>
+  <div> add ingredients<div>
+
+  <% end %>
+</div>
