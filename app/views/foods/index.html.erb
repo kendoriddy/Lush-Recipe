@@ -24,6 +24,15 @@
           <td><%= food.measurement_unit %></td>
           <td><%= food.price %></td>
           <td><%= food.quantity %></td>
+          <td>
+							<span>
+								<i><%= link_to "edit", edit_food_path(food) %></i>
+						    </span>
+
+							<span>
+								<i><%= button_to "delete_outline", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, id: "delete_button" %></i>
+						    </span>
+						</td>
 
           <%
 =begin%>
