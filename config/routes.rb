@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :foods
   resources :recipes
-  
+
 
 
   # Defines the root path route ("/")
