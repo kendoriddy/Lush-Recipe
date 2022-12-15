@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :foods
   resources :recipes
 
+  get '/general_shopping_list', to: 'foods#general'
 
 
   # Defines the root path route ("/")
