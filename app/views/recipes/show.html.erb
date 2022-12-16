@@ -8,11 +8,17 @@
     <%if can? :manag, @recipe%>
        <%= link_to "Add ingredients",foods_path, class:"card-link"%> 
     <%end%>
-    <div class="form-check form-switch">
-    <%= form_with model: @recipe do |f| %>
-      <%=f.check_box :called, :onclick => "$('#rsvp').submit()", class:"form-check-input", id:"flexSwitchCheckDefault" %>
-      </div>
-    <%end%>
-      <label class="form-check-label" for="flexSwitchCheckDefault">Public</label>
-    </div>
+    <div class="col-md-4">
+    <% if can? :update, @recipe %>
+      <%= form_with model:@recipe, url:recipe_path(@recipe), html:{method: :put} do |f| %>
+        <button type="submit" class="btn" id="recipe_public">
+          <div class="form-check form-switch">
+            <%= f.label :public, class:"form-check-label" %>
+            <%= f.check_box :public, class:"form-check-input" %>
+          </div>
+        </button>
+      <% end %>
+    <% end %>
   </div>
+
+  

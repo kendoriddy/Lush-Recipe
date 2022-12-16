@@ -6,7 +6,7 @@
       </div>
       </div>
   <%else%>
-  <%= render "recipes/recipe",  collection: @recipes %>
+  <%= render partial: "recipes/recipe",  collection: @recipes %>
   <%end%>
 
-  <%= link_to "Create a new Recipe", new_recipe_path, class:"mt-5" %>
+

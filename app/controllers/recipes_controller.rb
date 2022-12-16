@@ -25,11 +25,22 @@ class RecipesController < ApplicationController
   def create 
     @recipe = Recipe.new(recipe_params)
     @recipe.user = @user
+    @recipe.public = false
     if @recipe.save 
       redirect_to recipes_path, notice: "recipe created successfully"
     else
       render :new, notice: "notsaved"
     end 
+  end 
+
+  def update
+    def update
+      @recipe.update(public: params[:checkbox_input])
+      respond_to do |format|
+        format.html { redirect_to @recipe }
+        format.js
+      end
+    end
   end 
 
   private
