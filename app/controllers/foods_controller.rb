@@ -1,5 +1,4 @@
 class FoodsController < ApplicationController
-    skip_before_action :authenticate_user!
 
     def index
         @foods = current_user.foods
