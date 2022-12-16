@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = @user
-    @recipe.public = false
+    @recipe.public = true
     if @recipe.save 
       redirect_to recipes_path, notice: "recipe created successfully"
     else

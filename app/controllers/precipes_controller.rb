@@ -3,7 +3,6 @@ class PrecipesController < ApplicationController
 
   def index
     @recipes = Recipe.where(public: true)
-    authorize! :read, @recipes.first
   end
 
   def show

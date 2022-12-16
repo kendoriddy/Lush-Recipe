@@ -66,7 +66,7 @@ class FoodsController < ApplicationController
         @foods.each do |food|
           @total += (food.price * food.quantity)
         end
-      end
+    end
 
     def food_params
         params.require(:food).permit(:name, :quantity, :measurement_unit, :price)

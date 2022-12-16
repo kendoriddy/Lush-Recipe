@@ -4,9 +4,9 @@
     <h6 class="card-subtitle mb-2 text-muted">By time: <%=@recipe.user.name%></h6>
     <p class="card-text">Preparation time: <%=@recipe.preparation_time%>.</p>
     <p class="card-text">Coocking time:<%= @recipe.cooking_time%>.</p>
-    <%= link_to "Steps Goes here",recipe_path(@recipe), class:"card-link"%>
+    <%= link_to "Generate Shoppinng List",recipe_path(@recipe), class:"card-link"%>
     <%if can? :manag, @recipe%>
-       <%= link_to "Add ingredients",foods_path, class:"card-link"%> 
+       <%= link_to "Add ingredients",new_recipe_recipe_food_path(@recipe), class:"card-link"%> 
     <%end%>
     <div class="col-md-4">
     <% if can? :update, @recipe %>
