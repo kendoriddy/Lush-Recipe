@@ -1,11 +1,18 @@
-<h2><%= @recipe.name%> </h2>
-
-<div>Preparation time: <%=@recipe.preparation_time%></div>
-<div>Coocking time:<%= @recipe.cooking_time%></div>
-<%= link_to "Steps Goes here",recipe_path(@recipe)  %>
-<div class="form-check form-switch">
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-  <label class="form-check-label" for="flexSwitchCheckDefault">Public</label>
-  # <link_to "Generate shopping list", %>
-</div>
-
+<div class="card" style="width: 25rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @recipe.name%></h5>
+    <h6 class="card-subtitle mb-2 text-muted">By time: <%=@recipe.user.name%></h6>
+    <p class="card-text">Preparation time: <%=@recipe.preparation_time%>.</p>
+    <p class="card-text">Coocking time:<%= @recipe.cooking_time%>.</p>
+    <%= link_to "Steps Goes here",recipe_path(@recipe), class:"card-link"%>
+    <%if can? :manag, @recipe%>
+       <%= link_to "Add ingredients",foods_path, class:"card-link"%> 
+    <%end%>
+    <div class="form-check form-switch">
+    <%= form_with model: @recipe do |f| %>
+      <%=f.check_box :called, :onclick => "$('#rsvp').submit()", class:"form-check-input", id:"flexSwitchCheckDefault" %>
+      </div>
+    <%end%>
+      <label class="form-check-label" for="flexSwitchCheckDefault">Public</label>
+    </div>
+  </div>

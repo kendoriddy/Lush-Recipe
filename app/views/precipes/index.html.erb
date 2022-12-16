@@ -1,2 +1,12 @@
-<h1>Public Recipes#</h1>
-<%= render partial: "shared/recipe", collection: @recipes %>
+<%if @recipes.empty?%>
+      <div class="card mb-3 border-danger" style="width: 540px;">
+        <div class="card-header bg-danger text-white">There is no reicpes</div>
+        <div class="card-body">
+          <h5 class="card-title text-danger">Please first submit a post then come back to this page thanks.</h5>
+      </div>
+      </div>
+  <%else%>
+  <%= render "recipes/recipe",  collection: @recipes %>
+  <%end%>
+
+  <%= link_to "Create a new Recipe", new_recipe_path, class:"mt-5" %>
