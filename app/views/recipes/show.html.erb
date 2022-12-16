@@ -4,7 +4,7 @@
     <h6 class="card-subtitle mb-2 text-muted">By time: <%=@recipe.user.name%></h6>
     <p class="card-text">Preparation time: <%=@recipe.preparation_time%>.</p>
     <p class="card-text">Coocking time:<%= @recipe.cooking_time%>.</p>
-    <%= link_to "Generate Shoppinng List",recipe_path(@recipe), class:"card-link"%>
+    <%= link_to 'Generate Shoppinng List', general_path, data: {turbo_method: :post}, class:"card-link" %>
     <%if can? :manag, @recipe%>
        <%= link_to "Add ingredients",new_recipe_recipe_food_path(@recipe), class:"card-link"%> 
     <%end%>
@@ -20,5 +20,29 @@
       <% end %>
     <% end %>
   </div>
-
+  <table class='table'>
+  <% if @recipe.recipe_foods.any? %>
+     <thead>
+         <tr>
+         <th>Food</th>
+         <th>Quantity</th>
+         <th>Value</th>
+         <th>Action</th>
+         </tr>
+     </thead>
+     <tbody>
+     <% @recipe.recipe_foods.each do |food|%>
+     <tr>
+       <td><%= food.food.name%></th>
+       <td><%= food.quantity%></td>
+       <td><%= food.quantity * food.food.price %></td>
+       <td>
+         <%=link_to "Delete", recipe_recipe_food_path(@recipe, food), data: {turbo_method: :delete, turbo_confirm: 'are you sure'}, method: :delete%>
+       </td>
+     </tr>
+     <%end%>
+     </tbody>
+   <%end%>
+ </table>
+ </div>
   

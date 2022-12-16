@@ -1,4 +1,7 @@
   class RecipeFoodsController < ApplicationController
+    skip_before_action :authenticate_user!
+    before_action :set_user
+
     def new
       recipe = Recipe.find(params[:recipe_id])
       unless recipe.user == current_user
@@ -45,4 +48,8 @@
     def recipe_food_params
       params.require(:recipe_food).permit(:quantity, :food_id)
     end
+
+    def set_user
+      @user = current_user
+    end 
 end

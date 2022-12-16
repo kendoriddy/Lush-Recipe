@@ -1,12 +1,13 @@
 class FoodsController < ApplicationController
+  skip_before_action :authenticate_user!
+  before_action :set_user
 
     def index
-        @foods = current_user.foods
+        @foods = @user.foods
     end
 
     def show
         @food = Food.find(params[:id])
-        @user = current_user
     end
 
     def new
@@ -14,7 +15,7 @@ class FoodsController < ApplicationController
     end
 
     def create
-        @food = current_user.foods.new(food_params)
+        @food = @user.foods.new(food_params)
 
         if @food.save
             redirect_to foods_path, notice: 'New Food successfully added.'
@@ -24,11 +25,11 @@ class FoodsController < ApplicationController
     end
 
     def edit
-        @food = current_user.foods.find(params[:id])
+        @food = @user.foods.find(params[:id])
       end
     
       def update
-        @food = current_user.foods.find(params[:id])
+        @food = @user.foods.find(params[:id])
         if @food.update(food_params)
           redirect_to foods_path, notice: 'Food was successfully updated.'
         else
@@ -39,7 +40,7 @@ class FoodsController < ApplicationController
     def destroy
         food = Food.find(params[:id])
 
-        unless food.user = current_user
+        unless food.user = @user
             return flash[:alert] = "You do not have permission to delete this food as it belongs to another user"
         end
 
@@ -52,8 +53,8 @@ class FoodsController < ApplicationController
     end
 
     def general
-        @foods = current_user.foods
-        current_user.recipes.map do |recipe|
+        @foods = @user.foods
+        @user.recipes.map do |recipe|
           recipe.recipe_foods.map do |recipe_food|
             food = recipe_food.food
             test = @foods.select { |f| f.name == food.name }[0]
@@ -68,7 +69,14 @@ class FoodsController < ApplicationController
         end
     end
 
+
+    private
+
     def food_params
         params.require(:food).permit(:name, :quantity, :measurement_unit, :price)
     end
+
+    def set_user
+      @user = current_user
+    end 
 end

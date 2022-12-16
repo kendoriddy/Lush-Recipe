@@ -1,6 +1,6 @@
 class PrecipesController < ApplicationController
   skip_before_action :authenticate_user!
-
+  before_action :set_user
   def index
     @recipes = Recipe.where(public: true)
   end
@@ -18,5 +18,6 @@ class PrecipesController < ApplicationController
   def set_recipe 
     @recipe = Recipe.find(params[:id])
   end 
+
 
 end
