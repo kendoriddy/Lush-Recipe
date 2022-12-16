@@ -1,5 +1,4 @@
-<div class='mt-3 d-flex align-items-center flex-column'>
-  <%if @recipes.empty?%>
+<%if @recipes.empty?%>
       <div class="card mb-3 border-danger" style="width: 540px;">
         <div class="card-header bg-danger text-white">There is no reicpes</div>
         <div class="card-body">
@@ -10,5 +9,4 @@
   <%= render @recipes %>
   <%end%>
 
-  <%= link_to "Create a new Recipe", new_recipe_path %>
-</div>
+  <%= link_to "Create a new Recipe", new_recipe_path, class:"mt-5" %>
