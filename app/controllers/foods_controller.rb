@@ -1,5 +1,4 @@
 class FoodsController < ApplicationController
-  skip_before_action :authenticate_user!
   before_action :set_user
 
     def index
