@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
        validates_associated :foods
        validates_associated :recipes
-       validates :name, :login, :email, presence: true
+       validates :name, :email, presence: true
        validates :email, uniqueness: true
        validates :name, length: { minimum: 2 }
        validates :password, length: { minimum: 6 }
