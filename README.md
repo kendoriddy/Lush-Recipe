@@ -1,4 +1,3 @@
-<a name="readme-top"></a>
 
 <!--
 HOW TO USE:
@@ -196,9 +195,9 @@ Example command:
 
 👤 **Anas Chaabane**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/ChaabaneAnas)
+- Twitter: [@twitterhandle](https://twitter.com/ChaabaneAnas)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/ChaabaneAnas)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
