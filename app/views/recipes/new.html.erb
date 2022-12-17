@@ -1,4 +1,5 @@
 <h2>Create a new Recipe </h2>
+
 <%= form_with model: @recipe do |f| %>
   <div class="mb-3">
     <%= f.label :name, class:"label-control" %>
@@ -9,8 +10,8 @@
     <%= f.text_field  :preparation_time, class:"form-control" %>
   </div>
   <div class="mb-3">
-    <%= f.label :Coocking_time, class:"label-control" %>
-    <%= f.text_field :description, class:"form-control" %>
+    <%= f.label :cooking_time, class:"label-control" %>
+    <%= f.text_field :cooking_time, class:"form-control" %>
   </div>
   <div class="mb-3">
     <%= f.label :description, class:"label-control" %>
