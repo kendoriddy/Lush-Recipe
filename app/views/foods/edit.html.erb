@@ -1,0 +1,22 @@
+
+<!-- component -->
+<div>
+	<div>
+		<div>
+			<div>
+				<div>
+					<h1>Edit Your Food</h1>
+                     <% if @food.errors.any? %>
+                            <ul>
+                            <% @food.errors.full_messages.each do |msg|%>
+                            <li><%= msg %></li>
+                            <% end %>
+                            </ul>
+                    <% end %>
+   
+				</div>
+				<%= render 'form', food: @food %>
+            </div>
+        </div>
+    </div>
+</div>

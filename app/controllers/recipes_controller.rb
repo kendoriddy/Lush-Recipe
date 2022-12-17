@@ -1,37 +1,36 @@
 class RecipesController < ApplicationController
-  skip_before_action :authenticate_user!
+
   before_action :set_user
   before_action :set_recipe, only: [:show, :destroy]
-   
+
   def index
-    @user = current_user
     @recipes = @user.recipes
-  end 
+  end
 
 
-  def show  
-  end 
+  def show
+  end
 
 
   def destroy
     @recipe.destroy
     redirect_to recipes_path
-  end 
+  end
 
   def new
     @recipe = Recipe.new
-  end 
+  end
 
-  def create 
+  def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = @user
-    @recipe.public = false
+    @recipe.public = true
     if @recipe.save 
       redirect_to recipes_path, notice: "recipe created successfully"
     else
       render :new, notice: "notsaved"
-    end 
-  end 
+    end
+  end
 
   def update
     def update
@@ -47,7 +46,7 @@ class RecipesController < ApplicationController
 
   def set_user
     @user = current_user
-  end 
+  end
 
   def set_recipe 
     @recipe = Recipe.find(params[:id])
