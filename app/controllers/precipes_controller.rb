@@ -5,19 +5,15 @@ class PrecipesController < ApplicationController
     @recipes = Recipe.where(public: true)
   end
 
-  def show
-  end
-
+  def show; end
 
   private
 
   def set_user
     @user = current_user
-  end 
+  end
 
-  def set_recipe 
+  def set_recipe
     @recipe = Recipe.find(params[:id])
-  end 
-
-
+  end
 end
