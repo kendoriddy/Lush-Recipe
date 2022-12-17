@@ -1,0 +1,12 @@
+<%if @recipes.empty?%>
+      <div class="card mb-3 border-danger" style="width: 540px;">
+        <div class="card-header bg-danger text-white">Empty</div>
+        <div class="card-body">
+          <h5 class="card-title text-danger">there is no public recipes yet</h5>
+      </div>
+      </div>
+  <%else%>
+  <%= render partial: "recipes/recipe",  collection: @recipes %>
+  <%end%>
+
+

@@ -1,0 +1,11 @@
+<div class="card mb-3" style="width: 28rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%=recipe.name%></h5>
+    <h6 class="card-subtitle mb-2 text-muted">By.<%=recipe.user.name%></h6>
+    <p class="card-text"><%=recipe.description%></p>
+    <%= link_to"See Details", recipe_path(recipe),calss: "mb-3"%>
+    <%if can? :delete, recipe%>
+    <%= button_to 'delete', recipe_path(recipe), method: :delete,class:"btn btn-secondary" %>
+    <%end%>
+  </div>
+</div>
