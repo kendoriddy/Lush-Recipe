@@ -82,3 +82,5 @@ gem 'jsbundling-rails', '~> 1.0'
 gem 'cancancan'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'letter_opener'
