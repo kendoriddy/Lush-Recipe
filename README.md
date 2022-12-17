@@ -120,17 +120,6 @@ After you're finished please remove all the comments and instructions!
 
 To get a local copy up and running, follow these steps.
 
-### Prerequisites
-
-In order to run this project you need:
-
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
 
 ### Setup
 
@@ -149,6 +138,23 @@ Example commands:
 
 Install this project with:
 
+- Run:
+```
+Bundle Install
+rails db:drop
+rails db:create
+rails db:migrate
+
+To include bootstrap in the project and avoid bootstrap-related errors, run the following commands...
+
+./bin/rails css:install:bootstrap
+./bin/rails javascript:install:esbuild
+yarn add @hotwired/turbo-rails
+yarn add @hotwired/stimulus
+
+THen, start the app with...
+rails s
+```
 <!--
 Example command:
 
@@ -158,21 +164,13 @@ Example command:
 ```
 --->
 
-### Usage
-
-To run the project, execute the following command:
-
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
-
 ### Run tests
 
 To run tests, run the following command:
+
+```
+Rspec
+```
 
 <!--
 Example command:
@@ -182,18 +180,6 @@ Example command:
 ```
 --->
 
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
@@ -202,13 +188,13 @@ Example:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+👤 **Kehinde Ridwan**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@kendoriddy](https://github.com/kendoriddy)
+- Twitter: [@RideOnOne09](https://twitter.com/RideOnOne09)
+- LinkedIn: [Kehinde Onifade](https://www.linkedin.com/in/kehindeonifade/)
 
-👤 **Author2**
+👤 **Anas Chaabane**
 
 - GitHub: [@githubhandle](https://github.com/githubhandle)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
